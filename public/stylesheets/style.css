@@ -1,0 +1,33 @@
+#js-loadFilelist {
+  display: none;
+}
+
+.section-input {
+  padding: 20px 80px;
+  border-bottom: 1px solid rgba(0,0,0,.12);
+}
+.section-input .mdl-textfield {
+  margin-right: 40px;
+}
+
+.section-output {
+  position: relative;
+  min-height: 300px;
+}
+.section-output .mdl-data-table {
+  width: 100%;
+}
+.section-output .mdl-data-table td img {
+  width: 100px;
+  height: auto;
+}
+.section-output .delete-button {
+  padding: 30px 80px 32px;
+}
+.section-output .mdl-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -14px;
+  margin-left: -14px;
+}

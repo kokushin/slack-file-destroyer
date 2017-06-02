@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Slack File Destroyer 🔥</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  </head>
+  <body>
+    <div class="mdl-layout mdl-js-layout">
+      <header class="mdl-layout__header mdl-layout__header--scroll">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Slack File Destroyer 🔥</span>
+          <div class="mdl-layout-spacer"></div>
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="https://github.com/kokushin/slack-file-destroyer/wiki/Usage" target="_blank">Usage</a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">S 🔥 F 🔥 D</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="https://github.com/kokushin/slack-file-destroyer/wiki/Usage" target="_blank">Usage</a>
+        </nav>
+      </div>
+
+      <main class="mdl-layout__content">
+        <div class="page-content">
+
+          <div class="section-input">
+            <form action="/files" method="post" id="js-getFilelist">
+              <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" name="username" placeholder="Username" >
+              </div>
+              <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" name="token" placeholder="Access token key" id="js-getToken">
+              </div>
+              <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Get filelist</button>
+            </form>
+          </div>
+
+          <div class="section-output">
+            <div class="mdl-spinner mdl-js-spinner"></div>
+            <form action="/destroy" method="post" id="js-loadFilelist">
+              <input type="hidden" name="token" id="js-setToken">
+              <div class="delete-button">
+                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Destroy selected file</button>
+              </div>
+
+              <table class="mdl-data-table">
+                <thead>
+                  <tr>
+                    <th>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-data-table__select" for="table-header">
+                        <input type="checkbox" id="table-header" class="mdl-checkbox__input">
+                      </label>
+                    </th>
+                    <th class="mdl-data-table__cell--non-numeric">Filename</th>
+                    <th class="mdl-data-table__cell--non-numeric">Thumbnail</th>
+                    <th class="mdl-data-table__cell--non-numeric">Size</th>
+                    <th class="mdl-data-table__cell--non-numeric">Date</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+
+              <div class="delete-button">
+                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Destroy selected file</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </main>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="javascripts/app.js"></script>
+  </body>
+</html>
