@@ -14,6 +14,14 @@ router.post('/', function(req, res) {
 function createFilelist(req, res, token, username) {
   axios.post('https://slack.com/api/users.list?token=' + token)
   .then(function (result) {
+
+    if (!result.data.ok) {
+      res.json({
+        error: 'not_authed'
+      });
+      return;
+    }
+
     var members = result.data.members;
     for (key in members) {
       if (members[key].name === username) {

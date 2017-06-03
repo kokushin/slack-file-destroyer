@@ -32,6 +32,10 @@
           data: $(this).serialize(),
         })
         .done(function(data) {
+          if (data.error === 'not_authed') {
+            alert('認証に失敗しました');
+            return;
+          }
           self.loadFilelist(data);
         })
         .always(function() {
