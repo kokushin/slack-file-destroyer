@@ -43,7 +43,7 @@ function getFilelist(req, res, token, userid) {
   .then(function (result) {
     res.json({
       files: result.data.files
-    })
+    });
   })
   .catch(function (error) {
     console.log(error);
